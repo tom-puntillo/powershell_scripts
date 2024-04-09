@@ -11,10 +11,10 @@ $endDate = Get-Date "2024-01-31"
 # Function to search files for the keywords
 function Search-Files {
     param (
-        [string]$folder,
+        [string]$folder = $env:USERPROFILE,
         [string[]]$keywords,
-        [datetime]$startDate,
-        [datetime]$endDate
+        [datetime]$startDate = [datetime]::MinValue,
+        [datetime]$endDate = [datetime]::MaxValue
     )
 
     # Get all files in the folder
